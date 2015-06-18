@@ -83,7 +83,11 @@
         //counter++ if there is a piece
       //if counter is bigger than 1 return true
       //else return false
+
       var row = this.get(rowIndex);
+      if (row === undefined) {
+        return false;
+      }
       var counter = 0;
       for(var i = 0; i < row.length; i++) {
         if(row[i] === 1) {
@@ -102,6 +106,10 @@
       //for loop through rows
         //pass to hasRowConflictAt
         //if hasRowConflictAt is true, return true
+      if (this.get(0) === undefined) {
+        return false;
+      }
+
       var length = this.get(0).length
       for(var i = 0; i < length; i++) {
         if(this.hasRowConflictAt(i)) {
@@ -121,6 +129,9 @@
       //loop through every row and grab row[colIndex]
         //IF board.Get(i)[colIndex] is one, increment counter
       //If our counter is bigger than 1, return true, we found a conflict. Woo!
+      if (this.get(0) === undefined) {
+        return false;
+      }
       var length = this.get(0).length
       var counter = 0;
       for(var i = 0; i < length; i++) {
@@ -139,6 +150,9 @@
       //for loop through rows
         //pass to hasColConflictAt
         //if hasColConflictAt is true, return true
+      if (this.get(0) === undefined) {
+        return false;
+      }
       var length = this.get(0).length
       for(var i = 0; i < length; i++) {
         if(this.hasColConflictAt(i)) {
